@@ -1,8 +1,15 @@
 
 /*Media Queries*/
 @media screen and (min-width:900px){
-    section{
-        padding: 7.9rem;
+    .acct {
+        width: 80px;
+        height: 200px;
+        background-color: #40196c;
     }
+
+}
+
+
+@media (max-width: 960px){
 
 }
