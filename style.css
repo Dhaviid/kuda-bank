@@ -42,10 +42,12 @@
     .add {
         /* padding-left: 60px; */
 
-    ghfg
     }
 
-
+    i {
+        color: #40196c;
+        font-size: 2.5rem;
+    }
       
 }
 
