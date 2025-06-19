@@ -2,20 +2,187 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wallet Dashboard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .header .name {
+      flex-grow: 1;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+
+    .add-money {
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+    }
+
+    .add-money i {
+      color: #a67ff2;
+    }
+
+    .balance-card {
+      background-color: #40196c;
+      margin: 15px;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .balance-card .label {
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    .balance-card h1 {
+      margin: 10px 0;
+      font-size: 28px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+    }
+
+    .actions div {
+      text-align: center;
+      color: #ccc;
+    }
+
+    .actions i {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .verify-box {
+      background-color: #1d1d1d;
+      border-left: 5px solid #00c389;
+      margin: 15px;
+      border-radius: 10px;
+      padding: 10px;
+      position: relative;
+    }
+
+    .verify-box .status {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      background: #ff5f5f;
+      color: #fff;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 5px;
+    }
+
+    .section-title {
+      padding: 0 15px;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .date-label {
+      font-size: 12px;
+      color: #777;
+      padding: 10px 15px 0;
+    }
+
+    .transaction {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      border-bottom: 1px solid #222;
+    }
+
+    .transaction img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .transaction-details {
+      flex-grow: 1;
+    }
+
+    .transaction-details .title {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .transaction-details .time {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .amount {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #111;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      font-size: 12px;
+      border-top: 1px solid #222;
+    }
+
+    footer div {
+      text-align: center;
+      color: #aaa;
+    }
+
+    footer i {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    @media (min-width: 601px) {
+      body {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-
   <div class="header">
-    <img src="avatar.png" class="avatar" alt="Avatar">
-    <div class="greeting">
-      <p>Hi, David</p>
-    </div>
+    <img src="avatar.png" alt="Avatar" class="avatar">
+    <div class="name">Hi, David</div>
     <div class="add-money">
-      <i class="fas fa-plus-circle"></i>
       <span>Add Money</span>
+      <i class="fas fa-plus-circle"></i>
     </div>
   </div>
 
@@ -23,65 +190,62 @@
     <p class="label">Account Balance</p>
     <h1>₦10.00</h1>
     <div class="actions">
-      <div><i class="fas fa-credit-card"></i><p>Spend</p></div>
-      <div><i class="fas fa-piggy-bank"></i><p>Save</p></div>
-      <div><i class="fas fa-hand-holding-usd"></i><p>Borrow</p></div>
+      <div><i class="fas fa-wallet"></i>Spend</div>
+      <div><i class="fas fa-piggy-bank"></i>Save</div>
+      <div><i class="fas fa-university"></i>Borrow</div>
     </div>
   </div>
 
-  <div class="verify-section">
+  <div class="verify-box">
     <p><strong>Increase Your Limit</strong></p>
-    <p class="note">Add a valid ID to increase your transaction limit.</p>
+    <p>Add a valid ID to increase your transaction limit.</p>
     <span class="status">Not Done</span>
   </div>
 
   <div class="section-title">Recent Transactions</div>
 
-  <div class="transaction-date">07 Jan 2022</div>
+  <div class="date-label">07 Jan 2022</div>
   <div class="transaction">
-    <img src="glo.png" alt="Glo" class="trans-icon">
-    <div>
-      <p class="trans-title">GLOBACOMNG - 2349058401462</p>
-      <span class="time">08:15 AM</span>
+    <img src="glo.png" alt="Glo">
+    <div class="transaction-details">
+      <div class="title">GLOBACOMNG - 2349058401462</div>
+      <div class="time">08:15 AM</div>
     </div>
     <div class="amount">₦500.00</div>
   </div>
-
   <div class="transaction">
-    <img src="glo.png" alt="Glo" class="trans-icon">
-    <div>
-      <p class="trans-title">GLOBACOMNG - 2349058401462</p>
-      <span class="time">01:56 AM</span>
+    <img src="glo.png" alt="Glo">
+    <div class="transaction-details">
+      <div class="title">GLOBACOMNG - 2349058401462</div>
+      <div class="time">01:56 AM</div>
     </div>
     <div class="amount">₦100.00</div>
   </div>
-
   <div class="transaction">
-    <img src="glo.png" alt="Glo" class="trans-icon">
-    <div>
-      <p class="trans-title">GLOBACOMNG - 2349058401462</p>
-      <span class="time">01:55 AM</span>
+    <img src="glo.png" alt="Glo">
+    <div class="transaction-details">
+      <div class="title">GLOBACOMNG - 2349058401462</div>
+      <div class="time">01:55 AM</div>
     </div>
     <div class="amount">₦200.00</div>
   </div>
 
-  <div class="transaction-date">06 Jan 2022</div>
+  <div class="date-label">06 Jan 2022</div>
   <div class="transaction">
-    <img src="glo.png" alt="Glo" class="trans-icon">
-    <div>
-      <p class="trans-title">GLOBACOMNG - 2349058401462</p>
-      <span class="time">10:47 PM</span>
+    <img src="glo.png" alt="Glo">
+    <div class="transaction-details">
+      <div class="title">GLOBACOMNG - 2349058401462</div>
+      <div class="time">10:47 PM</div>
     </div>
     <div class="amount">₦200.00</div>
   </div>
 
   <footer>
-    <div>Home</div>
-    <div>Payments</div>
-    <div>Budget</div>
-    <div>Cards</div>
-    <div>More</div>
+    <div><i class="fas fa-home"></i>Home</div>
+    <div><i class="fas fa-paper-plane"></i>Payments</div>
+    <div><i class="fas fa-chart-pie"></i>Budget</div>
+    <div><i class="fas fa-credit-card"></i>Cards</div>
+    <div><i class="fas fa-ellipsis-h"></i>More</div>
   </footer>
-
 </body>
 </html>
