@@ -1,59 +1,144 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #000;
+  color: #fff;
+}
 
-/*Media Queries*/
-@media screen and (min-width:900px){
-    body{
-        background-color: #000000;
-    }
-    .acct {
-        width: 90%;
-        height: 400px;
-        background-color: #40196c;
-        border-radius: 25px;
-        padding: 20px;
-    }
+.header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  justify-content: space-between;
+}
 
-    p {
-        color: #fff;
-    }
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 
-    .avatar {
-        vertical-align: middle;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        margin-left: 35px;
-        margin-top: 20px;
-        
-      }
+.greeting p {
+  font-size: 16px;
+}
 
-    .profile {
-        display: flex;
-      
-        
-    }
+.add-money {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #a67ff2;
+  font-weight: bold;
+}
 
-    .profile > p{
-        margin: 10px;
-        padding: 20px;
-        font-size: 30px;
-    }
+.balance-card {
+  background-color: #40196c;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 15px;
+  text-align: center;
+}
 
-    p {
-        font-family: sans-serif;
-    }
+.balance-card .label {
+  font-size: 14px;
+  color: #ccc;
+}
 
-    .add {
-        margin-left: 100%;
-        
+.balance-card h1 {
+  margin: 10px 0;
+}
 
-    }
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
 
-    i {
-        color: #40196c;
-        font-size: 2.5rem;
-        
-    }
+.actions div {
+  text-align: center;
+  font-size: 14px;
+}
 
+.actions i {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #fff;
+}
 
+.verify-section {
+  background: #222;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+}
 
+.verify-section .note {
+  font-size: 13px;
+  color: #aaa;
+}
 
+.status {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: red;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.section-title {
+  font-size: 20px;
+  margin: 20px;
+  font-weight: bold;
+}
+
+.transaction-date {
+  margin: 20px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.transaction {
+  display: flex;
+  align-items: center;
+  background: #111;
+  margin: 10px 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.trans-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.trans-title {
+  font-size: 14px;
+  margin: 0;
+}
+
+.time {
+  font-size: 12px;
+  color: #888;
+}
+
+.amount {
+  margin-left: auto;
+  color: #0f0;
+  font-weight: bold;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  background: #222;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 13px;
+  text-align: center;
+}
